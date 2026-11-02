@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Français</title>
-<link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
         * {
@@ -14,6 +14,9 @@
 
         body {
             margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             background: #84cbc9;
             font-family: Arial, sans-serif;
             color: #000;
@@ -41,9 +44,10 @@
         }
 
         main {
+            flex: 1;
             width: 100%;
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 40px auto 0;
             padding: 0 20px;
         }
 
@@ -59,6 +63,113 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        /* ---------- JOCS ---------- */
+
+        .jocs {
+            margin-top: 60px;
+        }
+
+        .jocs h2 {
+            margin: 0 0 20px;
+            font-size: 26px;
+            text-transform: uppercase;
+        }
+
+        .jocs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .joc {
+            display: block;
+            padding: 20px;
+            background: white;
+            border: 4px solid black;
+            box-shadow: 6px 6px 0 black;
+            color: #000;
+            text-decoration: none;
+            transition: transform .12s, box-shadow .12s;
+        }
+
+        .joc:hover,
+        .joc:focus-visible {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 black;
+        }
+
+        .joc strong {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .joc span {
+            display: block;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .joc em {
+            display: inline-block;
+            margin-top: 14px;
+            font-style: normal;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* ---------- FOOTER (igual que meca.stepupfigueres.com) ---------- */
+
+        .stepup-footer {
+            width: 100%;
+            margin-top: 60px;
+            padding: 28px 18px;
+            background: #09101d;
+            border-top: 1px solid rgba(132, 203, 201, .25);
+            color: #fff;
+            font: 16px/1.4 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+        }
+
+        .stepup-footer .sf-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .stepup-footer img {
+            height: 64px;
+            width: auto;
+            display: block;
+        }
+
+        .stepup-footer strong {
+            display: block;
+            font-size: 1.15rem;
+            color: #fff;
+        }
+
+        .stepup-footer span {
+            display: block;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .stepup-footer a {
+            color: #84cbc9;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .stepup-footer a:hover,
+        .stepup-footer a:focus-visible {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
@@ -82,6 +193,11 @@
             .slides {
                 box-shadow: 5px 5px 0 black;
             }
+
+            .stepup-footer .sf-inner {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -93,14 +209,43 @@
         <h1>Français</h1>
     </header>
 
-<main>
-    <div class="slides">
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQwM-bz6ePY50_tHMj9X8dBmp_Ucz8cqEoegiDfk15CYsNBsgNIZsXnxJGQH4dcBWLyMSVQsf59KRBz/pubembed?start=false&loop=false&delayms=60000" allowfullscreen></iframe>
-    </div>
-</main>
+    <main>
+        <div class="slides">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQwM-bz6ePY50_tHMj9X8dBmp_Ucz8cqEoegiDfk15CYsNBsgNIZsXnxJGQH4dcBWLyMSVQsf59KRBz/pubembed?start=false&loop=false&delayms=60000" allowfullscreen></iframe>
+        </div>
 
-</body>
-</html>
+        <section class="jocs">
+            <h2>Jeux</h2>
+
+            <div class="jocs-grid">
+
+                <!-- TARGETA DE JOC: copia aquest bloc <a>...</a> per cada joc nou -->
+                <a class="joc" href="jocs/vocabulaire/">
+                    <strong>Vocabulaire</strong>
+                    <span>Pratique les mots de base.</span>
+                    <em>Jouer →</em>
+                </a>
+
+                <a class="joc" href="jocs/verbes/">
+                    <strong>Les verbes</strong>
+                    <span>Conjugue les verbes au présent.</span>
+                    <em>Jouer →</em>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="stepup-footer">
+        <div class="sf-inner">
+            <a href="https://stepupfigueres.com" target="_blank" rel="noopener"><img src="logo.png" alt="Step Up Figueres"></a>
+            <div>
+                <strong>Step Up Figueres</strong>
+                <span>Acadèmia de reforç i tècniques d'estudi</span>
+                <a href="https://stepupfigueres.com" target="_blank" rel="noopener">stepupfigueres.com</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
